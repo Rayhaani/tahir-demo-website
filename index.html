@@ -1,26 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tahir Guest Palace</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tahir Guest Palace</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato&display=swap" rel="stylesheet">
+
+<style>
+/* ===== GLOBAL STYLES ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Lato', sans-serif; color: #222; line-height: 1.6; background: #f5f5f5; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* ===== HEADER / HERO ===== */
+header {
+  background: url('https://images.unsplash.com/photo-1560448204-0a7ee9dfce6a?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+  height: 100vh;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 20px;
+  position: relative;
+}
+header::after {
+  content: '';
+  position: absolute;
+  top:0; left:0; right:0; bottom:0;
+  background: rgba(0,0,0,0.5);
+}
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  z-index: 1;
+}
+header p {
+  font-size: 20px;
+  margin: 15px 0;
+  z-index: 1;
+}
+header .btn {
+  display: inline-block;
+  background: #ff9800;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-top: 20px;
+  z-index: 1;
+  transition: 0.3s;
+}
+header .btn:hover { background: #e68a00; }
+
+/* ===== SECTIONS ===== */
+section { padding: 80px 20px; max-width: 1100px; margin: auto; }
+h2 { font-family: 'Playfair Display', serif; font-size: 32px; color: #0f2027; margin-bottom: 20px; text-align: center; }
+p { text-align: center; max-width: 800px; margin: auto; margin-bottom: 20px; }
+
+/* ===== ROOMS ===== */
+.rooms ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 0; }
+.rooms li {
+  background: white;
+  flex: 1 1 250px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  text-align: center;
+  font-weight: bold;
+  transition: transform 0.3s;
+}
+.rooms li:hover { transform: translateY(-5px); }
+
+/* ===== GALLERY ===== */
+.gallery .images { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+.gallery img {
+  width: 300px;
+  border-radius: 12px;
+  transition: transform 0.3s;
+}
+.gallery img:hover { transform: scale(1.05); }
+
+/* ===== CONTACT ===== */
+.contact { background: #0f2027; color: white; text-align: center; border-radius: 12px; padding: 50px 20px; }
+.contact a.btn { background: #ff9800; display: inline-block; margin-top: 20px; }
+
+/* ===== FOOTER ===== */
+footer { text-align: center; padding: 20px; background: #222; color: #aaa; }
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  header h1 { font-size: 36px; }
+  header p { font-size: 18px; }
+  .rooms ul { flex-direction: column; align-items: center; }
+  .gallery img { width: 90%; }
+}
+</style>
 </head>
+
 <body>
 
+<!-- HEADER / HERO -->
 <header>
   <h1>Tahir Guest Palace</h1>
-  <p>Luxury Accommodation & Events in Kano</p>
+  <p>Luxury Accommodation & Event Spaces in Kano</p>
   <a href="#contact" class="btn">Book Now</a>
 </header>
 
+<!-- ABOUT -->
 <section class="about">
   <h2>About Us</h2>
   <p>
-    Tahir Guest Palace offers premium rooms, conference halls, and event spaces with top-notch hospitality. Your comfort is our priority.
+    Tahir Guest Palace offers premium rooms, conference halls, and event spaces with top-notch hospitality. Your comfort and satisfaction are our priority.
   </p>
 </section>
 
+<!-- ROOMS -->
 <section class="rooms">
   <h2>Our Rooms</h2>
   <ul>
@@ -30,15 +128,17 @@
   </ul>
 </section>
 
+<!-- GALLERY -->
 <section class="gallery">
   <h2>Gallery</h2>
   <div class="images">
-    <img src="https://via.placeholder.com/300x200" alt="Room">
-    <img src="https://via.placeholder.com/300x200" alt="Conference Hall">
-    <img src="https://via.placeholder.com/300x200" alt="Dining">
+    <img src="https://images.unsplash.com/photo-1560448204-0a7ee9dfce6a?auto=format&fit=crop&w=800&q=80" alt="Hotel Room">
+    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Conference Hall">
+    <img src="https://images.unsplash.com/photo-1560449754-1d7a37a0b2a1?auto=format&fit=crop&w=800&q=80" alt="Dining Area">
   </div>
 </section>
 
+<!-- CONTACT -->
 <section class="contact" id="contact">
   <h2>Contact Us</h2>
   <p>📍 Kano, Nigeria</p>
@@ -46,77 +146,21 @@
   <a href="https://wa.me/2348012345678" class="btn">Chat on WhatsApp</a>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <p>© 2026 Tahir Guest Palace. All rights reserved.</p>
 </footer>
 
-<script src="script.js"></script>
+<script>
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e){
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+  });
+});
+</script>
+
 </body>
-</html>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  color: #222;
-  background: #f8f8f8;
-}
-
-header {
-  background: linear-gradient(135deg, #0f2027, #203a43);
-  color: white;
-  text-align: center;
-  padding: 60px 20px;
-}
-
-header h1 {
-  font-size: 36px;
-  margin-bottom: 10px;
-}
-
-.btn {
-  display: inline-block;
-  background: #ff9800;
-  color: white;
-  padding: 12px 20px;
-  border-radius: 6px;
-  text-decoration: none;
-  margin-top: 15px;
-}
-
-section {
-  padding: 40px 20px;
-  max-width: 1000px;
-  margin: auto;
-}
-
-.rooms ul {
-  list-style: none;
-  padding: 0;
-}
-
-.rooms li {
-  background: white;
-  margin-bottom: 10px;
-  padding: 15px;
-  border-radius: 6px;
-}
-
-.gallery .images {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.gallery img {
-  border-radius: 6px;
-  width: 30%;
-  height: auto;
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #222;
-  color: #aaa;
-}
-// Simple JS for demo purposes
-console.log("Tahir Guest Palace demo website loaded successfully.");
+  </html>
+  
